@@ -1,1 +1,1 @@
-# ETEC2101_01
+This is our repository for my ETEC2101-1 "Data Structures" course
