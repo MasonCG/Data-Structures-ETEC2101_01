@@ -27,6 +27,24 @@ class Person
 
 		//Method
 	public:
+
+		//constructor
+		Person();
+
+		Person(int starting_id, std::string start_fname, std::string start_lname);
+
+		int get_id();
+		std::string get_first_name();
+		std::string get_last_name();
+		float get_hourly_rate();
+		unsigned int get_hours_worked();
+
+		//settter methods
+		void set_hourly_rate(float new_rate);
+		void set_hours_worked(unsigned int new_hours);
+
+
+
 		float calculate_wage();
 };
 

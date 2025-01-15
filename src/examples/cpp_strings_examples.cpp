@@ -35,8 +35,12 @@ int main()
 
 
     // some code that uses the Person Class
-    Person P;
-    Person Q;
+    Person P(41, "Bob", "Jones");
+    Person Q(21, "Sally", "Smith");
+
+    P.set_hourly_rate(24.53);
+    P.set_hours_worked(50);
+    
 
 
     cin >> x;
