@@ -47,7 +47,6 @@ int main(int argc, char** argv) {
 		std::getline(fin, s2);
 		fin >> s2;
 
-
 		std::cout << x2 << y2 << s2;
 	}
 #endif
