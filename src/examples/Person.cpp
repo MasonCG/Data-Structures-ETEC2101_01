@@ -1,4 +1,5 @@
 #include <Person.h> // why "" instead of <>
+#include <iostream>
 
 //<> is for standard libraries while "" is for local files
 Person::Person()
@@ -20,6 +21,12 @@ Person::Person(int starting_id, std::string start_fname, std::string start_lname
 	hours_worked = 0;
 }
 
+Person::~Person()
+{
+	// we didn't allocate any resoures so no code is necessary
+	std::cout << "Person " << first_name << " " << last_name << " has died.";
+}
+
 int Person::get_id()
 {
 	return id;
@@ -27,7 +34,7 @@ int Person::get_id()
 
 std::string Person::get_first_name()
 {
-	return first_name
+	return first_name;
 }
 
 std::string Person::get_last_name()

@@ -14,7 +14,7 @@
     <ClInclude Include="..\..\include\examples\Person.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\examples\cpp_strings_examples.cpp" />
+    <ClCompile Include="..\..\src\examples\file_io.cpp" />
     <ClCompile Include="..\..\src\examples\Person.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

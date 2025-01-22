@@ -33,6 +33,10 @@ class Person
 
 		Person(int starting_id, std::string start_fname, std::string start_lname);
 
+		// Dectructor (called when an instance is about to be destroyed)
+		~Person();
+
+
 		int get_id();
 		std::string get_first_name();
 		std::string get_last_name();
@@ -43,9 +47,10 @@ class Person
 		void set_hourly_rate(float new_rate);
 		void set_hours_worked(unsigned int new_hours);
 
-
-
 		float calculate_wage();
+
+
+
 };
 
 

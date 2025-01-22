@@ -16,7 +16,7 @@ int main()
     float y = 3.14f;
     char name[32] = "Bob Jones";        //c-style
     const char* name2 = "Sally Smith"; //c-style 
-    strcpy(name, "Rober Jones");
+    strcpy_s(name, "Rober Jones");
     x = strlen(name);
     if (strcmp(name, "mmm") < 0){
         printf("name is alphabetically less than mmm\n");
@@ -38,12 +38,25 @@ int main()
     Person P(41, "Bob", "Jones");
     Person Q(21, "Sally", "Smith");
 
-    P.set_hourly_rate(24.53);
+    P.set_hourly_rate(24.53f);
     P.set_hours_worked(50);
-    
+    Q.set_hourly_rate(15.21f);
+    Q.set_hours_worked(60);
+
+    Person* pptr = new Person(44, "Eric", "Davis");
+
+    pptr->set_hourly_rate(12.15f);
+    pptr->set_hours_worked(23);
+    (*pptr).set_hourly_rate(12.35f);
+
+    delete pptr; 
+
+    pptr = NULL; // NULL is just a macro for 0
+    y = NULL; // valid but "weird"
 
 
-    cin >> x;
-    cout << x;
+
+    cout << P.get_id() << " " << P.get_first_name() << " " << P.get_last_name() << "\n";
+
 
 }
