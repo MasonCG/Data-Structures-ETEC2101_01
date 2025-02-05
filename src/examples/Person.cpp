@@ -2,7 +2,9 @@
 #include <iostream>
 
 //<> is for standard libraries while "" is for local files
-Person::Person()
+
+
+example::Person::Person()
 {
 	id = -1;
 	first_name = "???";
@@ -12,7 +14,7 @@ Person::Person()
 
 }
 
-Person::Person(int starting_id, std::string start_fname, std::string start_lname)
+example::Person::Person(int starting_id, std::string start_fname, std::string start_lname)
 {
 	id = starting_id;
 	first_name = start_fname;
@@ -21,50 +23,49 @@ Person::Person(int starting_id, std::string start_fname, std::string start_lname
 	hours_worked = 0;
 }
 
-Person::~Person()
+example::Person::~Person()
 {
-	// we didn't allocate any resoures so no code is necessary
-	std::cout << "Person " << first_name << " " << last_name << " has died.";
+
 }
 
-int Person::get_id()
+int example::Person::get_id()
 {
 	return id;
 }
 
-std::string Person::get_first_name()
+std::string example::Person::get_first_name()
 {
 	return first_name;
 }
 
-std::string Person::get_last_name()
+std::string example::Person::get_last_name()
 {
 	return last_name;
 }
 
-float Person::get_hourly_rate()
+float example::Person::get_hourly_rate()
 {
 	return hourly_rate;
 }
 
-unsigned int Person::get_hours_worked()
+unsigned int example::Person::get_hours_worked()
 {
 	return hours_worked;
 }
 
-void Person::set_hours_worked(unsigned int new_hours)
+void example::Person::set_hours_worked(unsigned int new_hours)
 {
 	hours_worked = new_hours;
 }
 
-void Person::set_hourly_rate(float new_rate)
+void example::Person::set_hourly_rate(float new_rate)
 {
 	hourly_rate = new_rate;
 }
 
 
 // We're providing teh body definition of the method we declared in our h file
-float Person::calculate_wage()
+float example::Person::calculate_wage()
 {
 	// In any (non-static) method, we have access to all attributes for this
 	// instance. Our jon in this method is to tell the comiler how to 

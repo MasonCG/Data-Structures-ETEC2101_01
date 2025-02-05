@@ -12,11 +12,14 @@
 
 #include <string>
 
-class Person
-{
-	// attributes
+namespace example {
 
-	// by default everything is private:
+
+	class Person
+	{
+		// attributes
+
+		// by default everything is private:
 
 	private:
 		int id;
@@ -51,10 +54,10 @@ class Person
 
 
 
-};
+	};
 
 
-
+}
 
 
 
