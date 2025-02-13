@@ -64,6 +64,15 @@ void example::Person::set_hourly_rate(float new_rate)
 }
 
 
+bool example::Person::operator==(const Person& p)
+{
+	if (this->get_id() == p.id) {
+		return true;
+	}
+
+	return false;
+}
+
 // We're providing teh body definition of the method we declared in our h file
 float example::Person::calculate_wage()
 {
@@ -75,4 +84,10 @@ float example::Person::calculate_wage()
 
 
 
+}
+
+std::ostream& example::operator<<(std::ostream& os, const example::Person& p)
+{
+	os << p.id;
+	return os;
 }

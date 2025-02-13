@@ -50,6 +50,10 @@ namespace example {
 		void set_hourly_rate(float new_rate);
 		void set_hours_worked(unsigned int new_hours);
 
+		friend std::ostream& operator<< (std::ostream& os, const Person& p);
+
+		bool operator== (const Person& p);
+
 		float calculate_wage();
 
 
