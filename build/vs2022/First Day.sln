@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scratch", "Scratch.vcxproj"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1", "Lab1.vcxproj", "{B0E8AD54-0C1A-4722-94D4-D6ABCADFF142}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab2", "..\Lab2\Lab2.vcxproj", "{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab2", "Lab2.vcxproj", "{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +24,7 @@ Global
 		{B0E8AD54-0C1A-4722-94D4-D6ABCADFF142}.Release|x64.ActiveCfg = Release|x64
 		{B0E8AD54-0C1A-4722-94D4-D6ABCADFF142}.Release|x64.Build.0 = Release|x64
 		{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}.Debug|x64.ActiveCfg = Debug|x64
+		{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}.Debug|x64.Build.0 = Debug|x64
 		{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}.Release|x64.ActiveCfg = Release|x64
 		{7A29FCE0-5C95-4994-B082-952AD7E4B7C3}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
