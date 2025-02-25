@@ -16,9 +16,9 @@
     <ClCompile Include="..\..\src\Lab2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\examples\arrayLists.h" />
     <ClInclude Include="..\..\include\examples\Person.h" />
     <ClInclude Include="..\..\include\examples\person_database.h" />
+    <ClInclude Include="..\..\include\ssuds\arrayLists.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

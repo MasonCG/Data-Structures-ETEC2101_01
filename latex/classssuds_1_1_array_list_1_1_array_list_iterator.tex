@@ -1,0 +1,193 @@
+\doxysection{ssuds\+::Array\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Array\+List\+Iterator Class Reference}
+\hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator}{}\label{classssuds_1_1_array_list_1_1_array_list_iterator}\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+
+
+An iterator that keeps track of its position or index within a the parent class \doxylink{classssuds_1_1_array_list}{Array\+List} and a pointer to the specific \doxylink{classssuds_1_1_array_list}{Array\+List} it is traversing.  
+
+
+
+
+{\ttfamily \#include $<$array\+Lists.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_aecf4ddc7dc315755759a8f777ad73d3e}\label{classssuds_1_1_array_list_1_1_array_list_iterator_aecf4ddc7dc315755759a8f777ad73d3e} 
+{\bfseries Array\+List\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em default constructor. Assigns list = nullptr and pos = 0 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a9e12d4da42dfec4db873c7696195ee8c}{Array\+List\+Iterator}} (\mbox{\hyperlink{classssuds_1_1_array_list}{Array\+List}} \texorpdfstring{$\ast$}{*}array\+List\+Ptr, int starting\+\_\+index)
+\begin{DoxyCompactList}\small\item\em specific constructor for \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}. list = Array\+List\+Ptr and pos = starting\+\_\+index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a6d0942a8043ea8b240aaff6f36fae964}{Array\+List\+Iterator}} (const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em A copy constructor. Creates a copy by transferring other\textquotesingle{}s attributes to a new \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a39de701f0efb0415bb468d9597f80781}{operator\texorpdfstring{$\ast$}{*}}} ()
+\begin{DoxyCompactList}\small\item\em overload dereference \texorpdfstring{$\ast$}{*} operator. Returns the object in the \doxylink{classssuds_1_1_array_list}{Array\+List} at the index held by pos attribute. Like \doxylink{classssuds_1_1_array_list}{Array\+List}\mbox{[}pos\mbox{]} \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a22177dd9c3e0ae7b2c4afe87c6ccd51d}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a22177dd9c3e0ae7b2c4afe87c6ccd51d} 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} {\bfseries operator++} (int not\+\_\+used)
+\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a810e9117c0fc681a26c39575f2bcfb6e}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em overload ++ operator. Increments the pos attribute. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a94cb8cbdefb474da68d0d55aa16d5f6f}{operator==}} (const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em overload == operator. It compares the pos attributes of the give Array\+List\+Iterators. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_aa8cc57ec7d142110e9aa759686509f9f}{operator!=}} (const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em overload NOT True != operator. It compares the pos attributes of the given Array\+List\+Iterators. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_ae773dc6c33198eda691b8185d9b879da}{operator+}} (int other)
+\begin{DoxyCompactList}\small\item\em over load the addition + operator to add to the pos attribute within the \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator_a1c40a2d8cb542e63af84eaeeea4dcd2b}{operator=}} (const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em overload the = operator to copy or assign a new iterator \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_af6b60c4c13aafc4adfac67a1d7e74f6a}\label{classssuds_1_1_array_list_1_1_array_list_iterator_af6b60c4c13aafc4adfac67a1d7e74f6a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Array\+List\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em no special destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class ssuds\+::\+Array\+List$<$ T $>$\+::\+Array\+List\+Iterator}
+An iterator that keeps track of its position or index within a the parent class \doxylink{classssuds_1_1_array_list}{Array\+List} and a pointer to the specific \doxylink{classssuds_1_1_array_list}{Array\+List} it is traversing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a9e12d4da42dfec4db873c7696195ee8c}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a9e12d4da42dfec4db873c7696195ee8c} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!ArrayListIterator@{ArrayListIterator}}
+\index{ArrayListIterator@{ArrayListIterator}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{ArrayListIterator()}{ArrayListIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::\+Array\+List\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classssuds_1_1_array_list}{Array\+List}} \texorpdfstring{$\ast$}{*}}]{array\+List\+Ptr,  }\item[{int}]{starting\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+specific constructor for \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}. list = Array\+List\+Ptr and pos = starting\+\_\+index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+List} & pointer to given \doxylink{classssuds_1_1_array_list}{Array\+List}\\
+\hline
+{\em starting\+\_\+index} & integer of start index\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a6d0942a8043ea8b240aaff6f36fae964}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a6d0942a8043ea8b240aaff6f36fae964} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!ArrayListIterator@{ArrayListIterator}}
+\index{ArrayListIterator@{ArrayListIterator}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{ArrayListIterator()}{ArrayListIterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::\+Array\+List\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A copy constructor. Creates a copy by transferring other\textquotesingle{}s attributes to a new \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} reference\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_aa8cc57ec7d142110e9aa759686509f9f}\label{classssuds_1_1_array_list_1_1_array_list_iterator_aa8cc57ec7d142110e9aa759686509f9f} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload NOT True != operator. It compares the pos attributes of the given Array\+List\+Iterators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} Reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a39de701f0efb0415bb468d9597f80781}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a39de701f0efb0415bb468d9597f80781} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload dereference \texorpdfstring{$\ast$}{*} operator. Returns the object in the \doxylink{classssuds_1_1_array_list}{Array\+List} at the index held by pos attribute. Like \doxylink{classssuds_1_1_array_list}{Array\+List}\mbox{[}pos\mbox{]} 
+
+\begin{DoxyReturn}{Returns}
+object or value in \doxylink{classssuds_1_1_array_list}{Array\+List}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_ae773dc6c33198eda691b8185d9b879da}\label{classssuds_1_1_array_list_1_1_array_list_iterator_ae773dc6c33198eda691b8185d9b879da} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator+@{operator+}}
+\index{operator+@{operator+}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator+ (\begin{DoxyParamCaption}\item[{int}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+over load the addition + operator to add to the pos attribute within the \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & integer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a810e9117c0fc681a26c39575f2bcfb6e}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a810e9117c0fc681a26c39575f2bcfb6e} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload ++ operator. Increments the pos attribute. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a1c40a2d8cb542e63af84eaeeea4dcd2b}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a1c40a2d8cb542e63af84eaeeea4dcd2b} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator=@{operator=}}
+\index{operator=@{operator=}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload the = operator to copy or assign a new iterator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & reference to an \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} with other\textquotesingle{}s attributes
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_1_1_array_list_iterator_a94cb8cbdefb474da68d0d55aa16d5f6f}\label{classssuds_1_1_array_list_1_1_array_list_iterator_a94cb8cbdefb474da68d0d55aa16d5f6f} 
+\index{ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!ssuds::ArrayList$<$ T $>$::ArrayListIterator@{ssuds::ArrayList$<$ T $>$::ArrayListIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::\+Array\+List\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overload == operator. It compares the pos attributes of the give Array\+List\+Iterators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator} reference\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ssuds/array\+Lists.\+h\end{DoxyCompactItemize}
