@@ -3,8 +3,13 @@
 template <typename E>  // E is the element type.
 class Queue {
 public:
-	Queue();
-	void Enqueue(const E& element);
-	E* Dequeue();  // Returns NULL if the queue is empty.
-	size_t size() const;
+
+	int f2 = 0;
+
+	Queue() {
+
+	}
+	void add(int num) {
+		f2 += num;
+	}
 };
