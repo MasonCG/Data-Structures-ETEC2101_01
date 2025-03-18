@@ -150,7 +150,7 @@ namespace ssuds {
 		/// <param name="index">index of the array item is being added to</param>
 		void insert(const T& item, int index) {			
 			
-			if (index < 0 || index > myArraySize - 1) {
+			if (index < 0 || index > myArraySize) {
 				throw std::out_of_range("index is not in range");
 			}
 
@@ -169,19 +169,19 @@ namespace ssuds {
 				myArrayCapacity *= 2;
 			
 				T* temp_array = new T[myArrayCapacity];
-
-				unsigned int currentIndex = 0;
-				for (unsigned int i = 0; i < myArraySize; i++) {
+				unsigned int current_index = 0;
+				for (unsigned int i = 0; i < myArraySize + 1; i++) {
 					if (i == index) {
 						temp_array[i] = item;
 						continue;
 					}
 
-					temp_array[i] = myArray[currentIndex];
-					currentIndex++;
+					temp_array[i] = myArray[current_index];
+					current_index++;
 				}
 			
-				
+				delete[] myArray;
+				myArray = temp_array;
 			}
 
 			else {

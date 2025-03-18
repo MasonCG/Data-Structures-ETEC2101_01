@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\examples\Person.cpp" />
     <ClCompile Include="..\..\src\examples\person_database.cpp" />
+    <ClCompile Include="..\..\src\unit_tests\array_list_tests.cpp" />
     <ClCompile Include="..\..\src\unit_tests\unit_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
