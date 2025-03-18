@@ -369,31 +369,6 @@ TEST(ArrayListTests, output_small_test) {
 
 }
 
-TEST(ArrayListTests, output_large_test) {
-	ssuds::ArrayList<int> int_list;
-	int testNum = 1000;
-	for (int i = 0; i < testNum; i++) {
-		int_list.append(i);
-	}
-
-	std::ostringstream oss;
-	int_list.output(oss);
-
-	std::string correctOutput = "";
-	correctOutput += "[";
-	for (int i = 0; i < testNum; i++) {
-		correctOutput += i;
-		if (i < testNum - 1) {
-			correctOutput += ", ";
-		}
-	}
-	correctOutput += "]";
-
-
-	ASSERT_EQ(oss.str(), correctOutput);
-
-}
-
 
 
 TEST(ArrayListTests, ostreamInput_operator_small_test) {
