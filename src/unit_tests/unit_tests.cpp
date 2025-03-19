@@ -6,19 +6,32 @@
 #include <arrayLists.h>
 
 
+//=================================
+//        Lab 2 Tests
+//=================================
+
+
 TEST(ArrayListTests, Defualt_Constructor_test) {
 	ssuds::ArrayList<int> int_list;
 
 	EXPECT_EQ(int_list.size(), 0);
-	EXPECT_EQ(int_list.capacity(), 2);
+	EXPECT_EQ(int_list.capacity(), 0);
 
 }
 
-TEST(ArrayListTests, Capcity_Constructor_test) {
-	ssuds::ArrayList<int> int_list(1024);
 
-	EXPECT_EQ(int_list.size(), 0);
-	EXPECT_EQ(int_list.capacity(), 1024);
+TEST(ArrayListTests, Copy_Constructor_test) {
+	ssuds::ArrayList<int> int_list;
+	for (int i = 0; i < 100; i++) {
+		int_list.append(i);
+	}
+
+	ssuds::ArrayList<int> int_list2(int_list);
+	
+	for (int i = 0; i < int_list.size(); i++) {
+		ASSERT_EQ(int_list[i], int_list2[i]);
+	}
+
 
 }
 
@@ -45,27 +58,36 @@ TEST(ArrayListTests, Size_test) {
 	ASSERT_EQ(int_list.size(), 4);
 }
 
-TEST(ArrayListTests, Capacity_test) {
+TEST(ArrayListTests, Capacity_Grow_test) {
 	ssuds::ArrayList<int> int_list;
 	
-	for (int i = 0; i < 8; i++) {
+
+	for (int i = 0; i < 10; i++) {
 		int_list.append(i);
 	}
 
-	EXPECT_EQ(int_list.capacity(), 8);
-	int_list.append(5);
-	EXPECT_EQ(int_list.capacity(), 16);
+	EXPECT_EQ(int_list.capacity(), 10);
+	int_list.append(10);
+	EXPECT_EQ(int_list.capacity(), 20);
 
-	for (int i = 0; i < int_list.capacity() * 0.75 + 1; i++) {
-		int_list.remove(0);
+}
+
+TEST(ArrayListTests, Capacity_Shrink_test) {
+	ssuds::ArrayList<int> int_list;
+
+
+	for (int i = 0; i < 9; i++) {
+		int_list.append(i);
 	}
 
-	EXPECT_EQ(int_list.capacity(), 8);
-
-
+	int_list.append(5);
+	EXPECT_EQ(int_list.capacity(), 10);
 	
-
-
+	for (int i = 0; i < 10; i++) {
+		int_list.remove(0);
+	}
+	
+	EXPECT_EQ(int_list.capacity(), 5);
 
 }
 
@@ -93,12 +115,15 @@ TEST(ArrayListTests, remove_outOfRangeException_test) {
 
 
 	// test if index is out of range short
+
+	unsigned int ui = -5;
+
 	try {
-		int_list.remove(-5);
+		int_list.remove(ui);
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index: " + std::to_string(ui)));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
@@ -110,7 +135,7 @@ TEST(ArrayListTests, remove_outOfRangeException_test) {
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index: " + std::to_string(25)));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
@@ -162,6 +187,33 @@ TEST(ArrayListTests, removeAll_large_test) {
 	EXPECT_EQ(int_list.size(), 2000);
 }
 
+TEST(ArrayListTests, clear_small_test) {
+	ssuds::ArrayList<int> int_list;
+	int_list.append(1);
+	int_list.append(2);
+	int_list.append(3);
+	int_list.append(2);
+
+	int_list.clear();
+
+	EXPECT_EQ(int_list.size(), 0);
+	EXPECT_EQ(int_list.capacity(), 0);
+}
+
+TEST(ArrayListTests, clear_large_test) {
+	ssuds::ArrayList<int> int_list;
+	for (int i = 0; i < 1000; i++) {
+		int_list.append(1);
+		int_list.append(2);
+		int_list.append(3);
+	}
+
+	int_list.clear();
+
+	EXPECT_EQ(int_list.size(), 0);
+	EXPECT_EQ(int_list.capacity(), 0);
+}
+
 TEST(ArrayListTests,prepend_test) {
 	ssuds::ArrayList<int> int_list;
 	int_list.prepend(1);
@@ -175,20 +227,7 @@ TEST(ArrayListTests,prepend_test) {
 	EXPECT_EQ(int_list[3], 1);
 }
 
-TEST(ArrayListTests, forEachLoop_test) {
-	ssuds::ArrayList<int> int_list;
-	int_list.prepend(1);
-	int_list.prepend(2);
-	int_list.prepend(3);
-	int_list.prepend(4);
 
-	int index = 0;
-	for (int num : int_list) {
-		
-		EXPECT_EQ(num, int_list[index]);
-		index++;
-	}
-}
 
 TEST(ArrayListTests, At_outOfRangeException_test) {
 	ssuds::ArrayList<int> int_list;
@@ -199,12 +238,14 @@ TEST(ArrayListTests, At_outOfRangeException_test) {
 
 
 	// test if index is out of range short
+	unsigned int ui = -5;
+
 	try {
-		int_list.at(-5);
+		int_list.at(ui);
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index (" + std::to_string(ui) + ")"));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
@@ -216,7 +257,7 @@ TEST(ArrayListTests, At_outOfRangeException_test) {
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index (" + std::to_string(25) + ")"));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
@@ -243,15 +284,11 @@ TEST(ArrayListTests, Reserve_test) {
 	int_list.prepend(3);
 	int_list.prepend(4);
 
-	EXPECT_EQ(int_list.capacity(), 4);
+	EXPECT_EQ(int_list.capacity(), 5);
 
 	int_list.reserve(256);
 	
 	EXPECT_EQ(int_list.capacity(), 256);
-
-	int_list.reserve(16);
-
-	EXPECT_EQ(int_list.capacity(), 16);
 
 }
 
@@ -261,18 +298,9 @@ TEST(ArrayListTests, reserve_Less_test) {
 		int_list.append(i);
 	}
 
+	int_list.reserve(25);
 
-	// test if index is out of range short
-	try {
-		int_list.reserve(25);
-		FAIL() << "Expected std::exception";
-	}
-	catch (std::exception const& err) {
-		EXPECT_EQ(err.what(), std::string("you are attempting to make your array smaller than the amount of items it contains"));
-	}
-	catch (...) {
-		FAIL() << "Expected std::exception";
-	}
+	ASSERT_TRUE(int_list.capacity() > 25);
 }
 
 TEST(ArrayListTests, Insert_outOfRangeException_test) {
@@ -282,23 +310,26 @@ TEST(ArrayListTests, Insert_outOfRangeException_test) {
 	int_list.append(3);
 	int_list.append(4);
 
+	unsigned int ui = -5;
+
 	try {
-		int_list.remove(-5);
+		int_list.insert(5, ui);
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index: " + std::to_string(ui)));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
 	}
 
+	// test index our of range long
 	try {
-		int_list.remove(25);
+		int_list.insert(6, 25);
 		FAIL() << "Expected std::out_of_range";
 	}
 	catch (std::out_of_range const& err) {
-		EXPECT_EQ(err.what(), std::string("index is not in range"));
+		ASSERT_EQ(err.what(), std::string("Invalid index: " + std::to_string(25)));
 	}
 	catch (...) {
 		FAIL() << "Expected std::out_of_range";
@@ -386,6 +417,161 @@ TEST(ArrayListTests, ostreamInput_operator_small_test) {
 
 }
 
+
+
+//=================================
+//        Lab 3 Tests
+//=================================
+
+TEST(ArrayListIteratorTests, begin_test) {
+	ssuds::ArrayList<int> int_list;
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	EXPECT_EQ(*int_list.begin(), 0);
+
+}
+
+TEST(ArrayListIteratorTests, assignment_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+	ssuds::ArrayList<int>::ArrayListIterator it2 = it;
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	EXPECT_EQ(*it, 0);
+
+}
+
+TEST(ArrayListIteratorTests, dereference_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	EXPECT_EQ(*it, 0);
+
+}
+
+TEST(ArrayListIteratorTests, PlusPlus_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	it++;
+	EXPECT_EQ(*it, 1);
+
+	++it;
+	EXPECT_EQ(*it, 2);
+
+
+}
+
+
+TEST(ArrayListIteratorTests, Plus_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	it = it + 2;
+
+	EXPECT_EQ(*it, 2);
+
+}
+
+TEST(ArrayListIteratorTests, Minus_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	it = it + 2;
+	it = it - 1;
+
+	EXPECT_EQ(*it, 1);
+
+}
+
+TEST(ArrayListIteratorTests, Equal_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+	ssuds::ArrayList<int>::ArrayListIterator it2 = it;
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	EXPECT_TRUE(it == it2);
+	
+	it2++;
+
+	EXPECT_FALSE(it == it2);
+
+}
+
+TEST(ArrayListIteratorTests, NotEqual_operator_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+	ssuds::ArrayList<int>::ArrayListIterator it2 = it;
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+
+	EXPECT_FALSE(it != it2);
+
+	it2++;
+	EXPECT_TRUE(it != it2);
+
+
+}
+
+
+TEST(ArrayListIteratorTests, end_test) {
+	ssuds::ArrayList<int> int_list;
+	ssuds::ArrayList<int>::ArrayListIterator it = int_list.begin();
+
+	for (int i = 0; i < 4; i++) {
+		int_list.append(i);
+	}
+
+	int count = 0;
+	while (it != int_list.end()) {
+		it++;
+		count++;
+	}
+	ASSERT_EQ(count, 4);
+
+}
+
+TEST(ArrayListIteratorTests, forEachLoop_test) {
+	ssuds::ArrayList<int> int_list;
+	int_list.prepend(1);
+	int_list.prepend(2);
+	int_list.prepend(3);
+	int_list.prepend(4);
+
+	int index = 0;
+	for (int num : int_list) {
+
+		EXPECT_EQ(num, int_list[index]);
+		index++;
+	}
+}
 
 int main(int argc, char** argv) {
 	testing::InitGoogleTest(&argc, argv);
