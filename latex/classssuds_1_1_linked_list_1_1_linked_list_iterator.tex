@@ -1,0 +1,197 @@
+\doxysection{ssuds\+::Linked\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+::Linked\+List\+Iterator Class Reference}
+\hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator}{}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator}\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+
+
+Iterator for linked\+Lists.  
+
+
+
+
+{\ttfamily \#include $<$linked\+List.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_aa2c2a987997c35daa868e4165c2fec80}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_aa2c2a987997c35daa868e4165c2fec80} 
+{\bfseries Linked\+List\+Iterator} (Node \texorpdfstring{$\ast$}{*}cur, \mbox{\hyperlink{namespacessuds_a7e2a29a4f8ad1f234836d9c4ef1ef0c0}{Linked\+List\+Iterator\+Direction}} dir=Linked\+List\+Iterator\+Direction\+::\+FORWARD)
+\begin{DoxyCompactList}\small\item\em List Iterator Constructor\+:=========================================TODO. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a4028879bfd13ff45faa45c1621dced}{operator!=}} (const \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em overrides != operator compares self to given \doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator} \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_a9aa0c4562ac426c0972879389f664250}{operator\texorpdfstring{$\ast$}{*}}} ()
+\begin{DoxyCompactList}\small\item\em gives back data at this \"{}index\"{} of the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a45311e6dbe9f24e74a830d658dc16e}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em goes to the next node in the list or the previous node depending on m\+Type \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_abd2d59e7a9ca9fe7ccbf4b4d5cfdbed5}{operator-\/-\/}} (int not\+\_\+used)
+\begin{DoxyCompactList}\small\item\em decremets the iterator as postfix x-- version \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4091b9490ee3466483d5009084b4e7eb}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4091b9490ee3466483d5009084b4e7eb} 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} {\bfseries operator-\/-\/} ()
+\item 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_ab529f3cc5ea1e6897503d57ce04673c1}{operator++}} (int not\+\_\+used)
+\begin{DoxyCompactList}\small\item\em decrements the iterator as postfix x++ version \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_a0527acb2dc9531bdf78744ae011801b3}{operator+}} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em adds a given number and iterates to that many futher into the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4164daa09b3287be2c4ed12f480ed64e}{operator-\/}} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em subtracts a given number of spots into the Linked List \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator_aaae9ce69f5edce3fa4bf57225ff2f80b}{operator==}} (\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em compares iterator to another \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_af71fad9f4990e232af55c73aeddb3823}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_af71fad9f4990e232af55c73aeddb3823} 
+class {\bfseries Linked\+List}
+\begin{DoxyCompactList}\small\item\em allowing the parent and subclasses the ability to access private attributes and methods \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class ssuds\+::\+Linked\+List$<$ T $>$\+::\+Linked\+List\+Iterator}
+Iterator for linked\+Lists. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a4028879bfd13ff45faa45c1621dced}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a4028879bfd13ff45faa45c1621dced} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+overrides != operator compares self to given \doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a9aa0c4562ac426c0972879389f664250}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a9aa0c4562ac426c0972879389f664250} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+gives back data at this \"{}index\"{} of the list 
+
+\begin{DoxyReturn}{Returns}
+List Data
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a0527acb2dc9531bdf78744ae011801b3}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a0527acb2dc9531bdf78744ae011801b3} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator+@{operator+}}
+\index{operator+@{operator+}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator+ (\begin{DoxyParamCaption}\item[{unsigned int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds a given number and iterates to that many futher into the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & unsigned int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a45311e6dbe9f24e74a830d658dc16e}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4a45311e6dbe9f24e74a830d658dc16e} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+goes to the next node in the list or the previous node depending on m\+Type 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_ab529f3cc5ea1e6897503d57ce04673c1}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_ab529f3cc5ea1e6897503d57ce04673c1} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{not\+\_\+used }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+decrements the iterator as postfix x++ version 
+
+
+\begin{DoxyParams}{Parameters}
+{\em not\+\_\+used} & int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4164daa09b3287be2c4ed12f480ed64e}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_a4164daa09b3287be2c4ed12f480ed64e} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator-\/ (\begin{DoxyParamCaption}\item[{unsigned int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+subtracts a given number of spots into the Linked List 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & unsigned int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_abd2d59e7a9ca9fe7ccbf4b4d5cfdbed5}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_abd2d59e7a9ca9fe7ccbf4b4d5cfdbed5} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{not\+\_\+used }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+decremets the iterator as postfix x-- version 
+
+
+\begin{DoxyParams}{Parameters}
+{\em not\+\_\+used} & int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_linked_list_1_1_linked_list_iterator_aaae9ce69f5edce3fa4bf57225ff2f80b}\label{classssuds_1_1_linked_list_1_1_linked_list_iterator_aaae9ce69f5edce3fa4bf57225ff2f80b} 
+\index{ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!ssuds::LinkedList$<$ T $>$::LinkedListIterator@{ssuds::LinkedList$<$ T $>$::LinkedListIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds\+::\+Linked\+List}}$<$ T $>$\+::\+Linked\+List\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classssuds_1_1_linked_list_1_1_linked_list_iterator}{Linked\+List\+Iterator}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+compares iterator to another 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ssuds/linked\+List.\+h\end{DoxyCompactItemize}

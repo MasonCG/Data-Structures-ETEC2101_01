@@ -40,6 +40,23 @@ namespace ssuds
 			Node* mPrevious;
 		};
 
+
+
+		/// <summary>
+		/// Pointer to the beginning node in the list
+		/// </summary>
+		Node* mStart;			// Sometimes called the "head"
+		/// <summary>
+		/// Pointer to the last node in the list
+		/// </summary>
+		Node* mEnd;				// Sometimes called the "tail"
+		/// <summary>
+		/// size of the list
+		/// </summary>
+		unsigned int mSize;
+
+	public:
+
 		/// <summary>
 		///		Iterator for linkedLists
 		/// </summary>
@@ -54,6 +71,7 @@ namespace ssuds
 			/// Direction the list is going to be iterated
 			/// </summary>
 			LinkedListIteratorDirection mType;
+
 
 		public:
 			/// <summary>
@@ -122,23 +140,167 @@ namespace ssuds
 
 			}
 
+			/// <summary>
+			///		decremets the iterator as postfix x-- version
+			/// </summary>
+			/// <param name="not_used">int</param>
+			/// <returns>LinkedListIterator</returns>
+			LinkedListIterator operator--(int not_used)
+			{
+				LinkedListIterator temp(mCurrentNode);
+				if (mType == LinkedListIteratorDirection::FORWARD) {
+
+					if (mCurrentNode->mPrevious == nullptr) {
+						Node* e = new Node;
+						e->mNext = nullptr;
+						e->mPrevious = nullptr;
+						e->mData = mCurrentNode->mData;
+						mCurrentNode->mPrevious = e;
+					}
+					mCurrentNode = mCurrentNode->mPrevious;
+				}
+				else
+					mCurrentNode = mCurrentNode->mNext;
+
+				return temp;
+
+			}
+
+			LinkedListIterator operator--()
+			{
+				if (mType == LinkedListIteratorDirection::FORWARD) {
+
+					if (mCurrentNode->mPrevious == nullptr) {
+						Node* e = new Node;
+						e->mNext = nullptr;
+						e->mPrevious = nullptr;
+						e->mData = mCurrentNode->mData;
+						mCurrentNode->mNext = e;
+					}
+					mCurrentNode = mCurrentNode->mPrevious;
+				}
+				else
+					mCurrentNode = mCurrentNode->mNext;
+
+				LinkedListIterator temp(mCurrentNode);
+				return temp;
+
+			}
+
+			/// <summary>
+			///		decrements the iterator as postfix x++ version
+			/// </summary>
+			/// <param name="not_used">int</param>
+			/// <returns>LinkedListIterator</returns>
+			LinkedListIterator operator++(int not_used)
+			{
+				LinkedListIterator temp(mCurrentNode);
+				if (mType == LinkedListIteratorDirection::FORWARD) {
+
+					if (mCurrentNode->mNext == nullptr) {
+						Node* e = new Node;
+						e->mNext = nullptr;
+						e->mPrevious = nullptr;
+						e->mData = mCurrentNode->mData;
+						mCurrentNode->mNext = e;
+					}
+					mCurrentNode = mCurrentNode->mNext;
+				}
+				else
+					mCurrentNode = mCurrentNode->mPrevious;
+
+				return temp;
+
+			}
+
+			/// <summary>
+			///		adds a given number and iterates to that many futher into the list
+			/// </summary>
+			/// <param name="num">unsigned int</param>
+			/// <returns>LinkedListIterator</returns>
+			LinkedListIterator operator+(unsigned int num)
+			{
+				if (mType == LinkedListIteratorDirection::FORWARD) {
+					while (num--) {
+						if (mCurrentNode->mNext == nullptr) {
+							Node* e = new Node;
+							e->mNext = nullptr;
+							e->mPrevious = nullptr;
+							e->mData = mCurrentNode->mData;
+							mCurrentNode->mNext = e;
+							break;
+						}
+						mCurrentNode = mCurrentNode->mNext;
+
+					}
+				}
+				else
+					while (num--) {
+						if (mCurrentNode->mPrevious == nullptr)
+							break;
+						mCurrentNode = mCurrentNode->mPrevious;
+					}
+
+				LinkedListIterator temp(mCurrentNode);
+				return temp;
+
+			}
+
+			/// <summary>
+			///		subtracts a given number of spots into the Linked List
+			/// </summary>
+			/// <param name="num">unsigned int</param>
+			/// <returns>LinkedListIterator</returns>
+			LinkedListIterator operator-(unsigned int num)
+			{
+				if (mType == LinkedListIteratorDirection::FORWARD) {
+					while (num--) {
+						if (mCurrentNode->mPrevious == nullptr) {
+							Node* e = new Node;
+							e->mNext = nullptr;
+							e->mPrevious = nullptr;
+							e->mData = mCurrentNode->mData;
+							mCurrentNode->mPrevious = e;
+							break;
+						}
+						mCurrentNode = mCurrentNode->mPrevious;
+					}
+				}
+				else
+					while (num--) {
+						if (mCurrentNode->mNext == nullptr)
+							break;
+						mCurrentNode = mCurrentNode->mPrevious;
+					}
+
+				LinkedListIterator temp(mCurrentNode);
+				return temp;
+
+			}
+
+			/// <summary>
+			/// compares iterator to another
+			/// </summary>
+			/// <param name="num"></param>
+			/// <returns></returns>
+			bool operator==(LinkedListIterator& other)
+			{
+				if (this->mCurrentNode->mNext == other.mCurrentNode->mNext) {
+					if (this->mCurrentNode->mPrevious == other.mCurrentNode->mPrevious) {
+						return true;
+					}
+				}
+
+				return false;
+
+
+			}
 
 		};
 
-		/// <summary>
-		/// Pointer to the beginning node in the list
-		/// </summary>
-		Node* mStart;			// Sometimes called the "head"
-		/// <summary>
-		/// Pointer to the last node in the list
-		/// </summary>
-		Node* mEnd;				// Sometimes called the "tail"
-		/// <summary>
-		/// size of the list
-		/// </summary>
-		unsigned int mSize;
+		
 
-	public:
+
 		/// <summary>
 		///		LinkkedList default Constructor
 		///		sets all attributes to nullptr or 0
@@ -148,6 +310,41 @@ namespace ssuds
 			mStart = nullptr;
 			mEnd = nullptr;
 			mSize = 0;
+		}
+
+		/// <summary>
+		///		copy-constructor used to copy another Linked list to a new one.
+		/// </summary>
+		/// <param name="other">LinkedList</param>
+		LinkedList(LinkedList& other)
+		{
+			for (T val : other) {
+				this->append(val);
+			}
+		}
+
+		/// <summary>
+		///		move-constructor creates a shallow copy to be passed when a function returns a LinkedList instance. 
+		/// </summary>
+		/// <param name="other">LinkedList&&</param>
+		LinkedList(LinkedList&& other): mStart(other.mStart), mEnd(other.mEnd), mSize(other.mSize)
+		{
+			other.mSize = 0;
+			other.mStart = nullptr;
+			other.mEnd = nullptr;
+		}
+
+		/// <summary>
+		/// Initializer-list constructor
+		/// </summary>
+		/// <param name="ilist">std::initializer_list<T></param>
+		LinkedList(std::initializer_list<T> ilist)
+		{
+		
+
+			for (T val : ilist) {
+				this->append(val);
+			}
 		}
 
 		/// <summary>
@@ -259,6 +456,14 @@ namespace ssuds
 		{
 			lList.output(os);
 			return os;
+		}
+
+		LinkedList& operator =(LinkedList& other) {
+			for (T val : other) {
+				this->append(val);
+			}
+
+			return *this;
 		}
 
 		/// <summary>
@@ -394,6 +599,131 @@ namespace ssuds
 			}
 
 			return this->end();
+
+		}
+
+		/// <summary>
+		///		finds node at given index
+		/// </summary>
+		/// <returns></returns>
+		T& at(unsigned int index) {
+			return (*this)[index];
+		}
+
+		/// <summary>
+		/// removes Node at given index
+		/// </summary>
+		/// <param name="index">unsigned integer</param>
+		void remove(unsigned int index) {
+			// 1. raise exception is out of index range
+			if (index < 0 || index > mSize - 1) {
+				throw std::out_of_range(index + "is out range");
+			}
+
+			
+			Node* cur = mStart;
+
+			// special exceptions
+			if (index == 0) {
+				cur->mNext->mPrevious = nullptr;
+				mStart = cur->mNext;
+				delete[] cur;
+				mSize--;
+				return;
+			}
+
+			if (index == mSize - 1) {
+				cur = mEnd;
+				cur->mPrevious->mNext = nullptr;
+				mEnd = cur->mPrevious;
+				delete[] cur;
+				mSize--;
+				return;
+			}
+			// 2. find Node at the given index
+			
+
+			while (cur) {
+				if (index == 0)
+					break;
+				index--;
+				cur = cur->mNext;
+			}
+
+			// 3. delete Node and fix mNext & mPrevious links
+			cur->mNext->mPrevious = cur->mPrevious;
+			cur->mPrevious->mNext = cur->mNext;
+
+			mSize--;
+			delete[] cur;
+
+		
+		}
+
+		/// <summary>
+		/// removes Node at given Iteration
+		/// </summary>
+		/// <param name="it"></param>
+		void remove(LinkedListIterator& it) {
+			
+			
+			Node* cur = it.mCurrentNode;
+
+			if (cur == mStart) {
+				cur->mNext->mPrevious = nullptr;
+				mStart = cur->mNext;
+				it.mCurrentNode = mStart;
+
+
+			} else if (cur == mEnd) {
+				cur->mPrevious->mNext = nullptr;
+				mEnd = cur->mPrevious;
+				it.mCurrentNode->mNext;
+			}
+			else {
+				it.mCurrentNode = cur->mNext;
+				cur->mNext->mPrevious = cur->mPrevious;
+				cur->mPrevious->mNext = cur->mNext;
+			}
+
+			mSize--;
+			delete[] cur;
+			return;
+
+		}
+
+		/// <summary>
+		/// removes all instances of given value
+		/// </summary>
+		/// <param name="val">T&</param>
+		/// <returns>unsigned intege -> of instances removed</returns>
+		unsigned int remove_all(const T& val) {
+
+			Node* cur = mStart;
+			unsigned int removed = 0;
+			while (cur) {
+				if (cur->mData == val) {
+					if (cur->mNext == nullptr) {
+						cur->mPrevious->mNext = nullptr;
+						mEnd = cur->mPrevious;
+					}
+					else if (cur->mPrevious == nullptr) {
+
+						cur->mNext->mPrevious = nullptr;
+						mStart = cur->mNext;
+					}
+					else {
+						cur->mNext->mPrevious = cur->mPrevious;
+						cur->mPrevious->mNext = cur->mNext;
+					}
+					mSize--;
+					removed++;
+				}
+				cur = cur->mNext;
+			}
+			delete[] cur;
+			return removed;
+
 
 		}
 

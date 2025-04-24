@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['remove_0',['remove',['../classssuds_1_1_array_list.html#ae86f9bf49676de4539ce9c5d56ebd642',1,'ssuds::ArrayList']]],
-  ['remove_5fall_1',['remove_all',['../classssuds_1_1_array_list.html#a3ef030038f51c7cb5b088cbd78b60d3c',1,'ssuds::ArrayList']]],
-  ['remove_5fperson_2',['remove_person',['../classexample_1_1_person_database.html#a028c15e2c23b452cbe09cf2cc9b69be6',1,'example::PersonDatabase']]],
-  ['reserve_3',['reserve',['../classssuds_1_1_array_list.html#a602f27aeca5467f893fe3d8f9a4a369c',1,'ssuds::ArrayList']]]
+  ['person_0',['Person',['../classexample_1_1_person.html#a13cef9dd175bcc612ae4fca575f91bc5',1,'example::Person::Person()'],['../classexample_1_1_person.html#a37df9e45d34a19f892fb7e14321d9a05',1,'example::Person::Person(int starting_id, std::string start_fname, std::string start_lname)']]],
+  ['persondatabase_1',['PersonDatabase',['../classexample_1_1_person_database.html#a5845e87cbf0ef0dc90192020a9dfd8b9',1,'example::PersonDatabase']]],
+  ['prepend_2',['prepend',['../classssuds_1_1_array_list.html#a4898f36024650dee875d67083f344481',1,'ssuds::ArrayList']]]
 ];

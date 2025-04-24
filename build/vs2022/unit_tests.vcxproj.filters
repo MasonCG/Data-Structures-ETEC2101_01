@@ -21,10 +21,10 @@
     <ClCompile Include="..\..\src\examples\person_database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\unit_tests\unit_tests.cpp">
+    <ClCompile Include="..\..\src\unit_tests\LinkedList_tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\unit_tests\array_list_tests.cpp">
+    <ClCompile Include="..\..\src\unit_tests\unit_tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

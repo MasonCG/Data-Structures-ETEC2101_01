@@ -75,30 +75,75 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classssuds_1_1_array_list_1_1_array_list_iterator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ssuds::ArrayList&lt; T &gt;::ArrayListIterator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>An iterator that keeps track of its position or index within a the parent class <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> and a pointer to the specific <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> it is traversing.  
+<p>The job of <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> is to traverse the data in an <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>. <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> wouldn't necessarily <em>need</em> an iterator since the internal array supports random access, but this is a chance to get used to the iterator pattern, which is much more useful for the user in other classes. We might eventually use inheritance to derive this class from some common iterator class.  
  <a href="classssuds_1_1_array_list_1_1_array_list_iterator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="array_lists_8h_source.html">arrayLists.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:add51bddc7c966d0b8e5e15ad6a0a9f42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#add51bddc7c966d0b8e5e15ad6a0a9f42">ArrayListIterator</a> (const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a> *arr, ArrayListIteratorType tp, int start_index)</td></tr>
+<tr class="memdesc:add51bddc7c966d0b8e5e15ad6a0a9f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main constructor.  <br /></td></tr>
+<tr class="separator:add51bddc7c966d0b8e5e15ad6a0a9f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf4ddc7dc315755759a8f777ad73d3e"><td class="memItemLeft" align="right" valign="top"><a id="aecf4ddc7dc315755759a8f777ad73d3e" name="aecf4ddc7dc315755759a8f777ad73d3e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ArrayListIterator</b> ()</td></tr>
+<tr class="memdesc:aecf4ddc7dc315755759a8f777ad73d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor only really has value if the user makes an iterator (BUT DOES NOT USE!) and then later assigns it a real value. If the user does anything with an iterator created like this, bad thigs will happen... <br /></td></tr>
+<tr class="separator:aecf4ddc7dc315755759a8f777ad73d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d0942a8043ea8b240aaff6f36fae964"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a6d0942a8043ea8b240aaff6f36fae964">ArrayListIterator</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other)</td></tr>
+<tr class="memdesc:a6d0942a8043ea8b240aaff6f36fae964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-constructor.  <br /></td></tr>
+<tr class="separator:a6d0942a8043ea8b240aaff6f36fae964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad28ae6dd5bfe06af7f912c1ddcb37db3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ad28ae6dd5bfe06af7f912c1ddcb37db3">operator==</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other) const</td></tr>
+<tr class="memdesc:ad28ae6dd5bfe06af7f912c1ddcb37db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are we equal to the other iterator? I'm currently not considering the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> type... I'm not sure if that's the right call or not.  <br /></td></tr>
+<tr class="separator:ad28ae6dd5bfe06af7f912c1ddcb37db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8587603e2089159ede221302f3369c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a1a8587603e2089159ede221302f3369c">operator!=</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other) const</td></tr>
+<tr class="memdesc:a1a8587603e2089159ede221302f3369c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are we not equal to the other iterator? This is computed by inverting the result of the == operator.  <br /></td></tr>
+<tr class="separator:a1a8587603e2089159ede221302f3369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810e9117c0fc681a26c39575f2bcfb6e"><td class="memItemLeft" align="right" valign="top"><a id="a810e9117c0fc681a26c39575f2bcfb6e" name="a810e9117c0fc681a26c39575f2bcfb6e"></a>
+<a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr class="memdesc:a810e9117c0fc681a26c39575f2bcfb6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments / advances the iterator (prefix ++x version). This version of ++ returns a copy of the Iterator <em>after</em> the ++ is performed. So if the user did this: y = ++x X is changed, and a copy is returned which can be assigned to y. It is the responsibility of the user to NOT call this if the iterator is invalid (equal to end/rend) &ndash; if they ignore this rule, the results are indeterminate. <br /></td></tr>
+<tr class="separator:a810e9117c0fc681a26c39575f2bcfb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22177dd9c3e0ae7b2c4afe87c6ccd51d"><td class="memItemLeft" align="right" valign="top"><a id="a22177dd9c3e0ae7b2c4afe87c6ccd51d" name="a22177dd9c3e0ae7b2c4afe87c6ccd51d"></a>
+<a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int not_used)</td></tr>
+<tr class="memdesc:a22177dd9c3e0ae7b2c4afe87c6ccd51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments / advances the iterator (postfix x++ version). This version of ++ returns a copy of the Iterator <em>before</em> the ++ is performed. So if the user did this: y = x++ X is changed, but y will hold the iterator value before the change. <br  />
+ It is the responsibility of the user to NOT call this if the iterator is invalid (equal to end/rend) &ndash; if they ignore this rule, the results are indeterminate. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">not_used</td><td>This parameter is not used at all, but the compiler passes us a value so we can have both versions of ++</td></tr>
+  </table>
+  </dd>
+</dl>
+<br /></td></tr>
+<tr class="separator:a22177dd9c3e0ae7b2c4afe87c6ccd51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ccdf6a0af8a08bbf960e3ace28ba4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a01ccdf6a0af8a08bbf960e3ace28ba4d">operator+</a> (int offset) const</td></tr>
+<tr class="memdesc:a01ccdf6a0af8a08bbf960e3ace28ba4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of this iterator that is some amount offset from the current position. The resulting index of that iterator is constratined to be within -1...mSize.  <br /></td></tr>
+<tr class="separator:a01ccdf6a0af8a08bbf960e3ace28ba4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a0b7ee8c18a93031e2352ea20f7e78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ae5a0b7ee8c18a93031e2352ea20f7e78">operator-</a> (int offset) const</td></tr>
+<tr class="memdesc:ae5a0b7ee8c18a93031e2352ea20f7e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">I don't think std::vector does this, but it is the inverse of the + operator and easy to add.  <br /></td></tr>
+<tr class="separator:ae5a0b7ee8c18a93031e2352ea20f7e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39de701f0efb0415bb468d9597f80781"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a39de701f0efb0415bb468d9597f80781">operator*</a> ()</td></tr>
+<tr class="memdesc:a39de701f0efb0415bb468d9597f80781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the current item in the <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>. It is important that the user only call this method if the iterator is not in an invalid state (defined by being equal to end/rend)  <br /></td></tr>
+<tr class="separator:a39de701f0efb0415bb468d9597f80781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4129161b3fabe7b5e39ef589eb1bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#add4129161b3fabe7b5e39ef589eb1bb4">operator=</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other)</td></tr>
+<tr class="memdesc:add4129161b3fabe7b5e39ef589eb1bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to copy one <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> value to another.  <br /></td></tr>
+<tr class="separator:add4129161b3fabe7b5e39ef589eb1bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf4ddc7dc315755759a8f777ad73d3e"><td class="memItemLeft" align="right" valign="top"><a id="aecf4ddc7dc315755759a8f777ad73d3e" name="aecf4ddc7dc315755759a8f777ad73d3e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ArrayListIterator</b> ()</td></tr>
 <tr class="memdesc:aecf4ddc7dc315755759a8f777ad73d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor. Assigns list = nullptr and pos = 0 <br /></td></tr>
 <tr class="separator:aecf4ddc7dc315755759a8f777ad73d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e12d4da42dfec4db873c7696195ee8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a9e12d4da42dfec4db873c7696195ee8c">ArrayListIterator</a> (<a class="el" href="classssuds_1_1_array_list.html">ArrayList</a> *arrayListPtr, int starting_index)</td></tr>
-<tr class="memdesc:a9e12d4da42dfec4db873c7696195ee8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">specific constructor for <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a>. list = ArrayListPtr and pos = starting_index  <br /></td></tr>
+<tr class="memdesc:a9e12d4da42dfec4db873c7696195ee8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">specific constructor for <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a>. list = ArrayListPtr and pos = starting_index  <br /></td></tr>
 <tr class="separator:a9e12d4da42dfec4db873c7696195ee8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d0942a8043ea8b240aaff6f36fae964"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a6d0942a8043ea8b240aaff6f36fae964">ArrayListIterator</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other)</td></tr>
-<tr class="memdesc:a6d0942a8043ea8b240aaff6f36fae964"><td class="mdescLeft">&#160;</td><td class="mdescRight">A copy constructor. Creates a copy by transferring other's attributes to a new <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a>.  <br /></td></tr>
+<tr class="memdesc:a6d0942a8043ea8b240aaff6f36fae964"><td class="mdescLeft">&#160;</td><td class="mdescRight">A copy constructor. Creates a copy by transferring other's attributes to a new <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a>.  <br /></td></tr>
 <tr class="separator:a6d0942a8043ea8b240aaff6f36fae964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39de701f0efb0415bb468d9597f80781"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a39de701f0efb0415bb468d9597f80781">operator*</a> ()</td></tr>
-<tr class="memdesc:a39de701f0efb0415bb468d9597f80781"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload dereference * operator. Returns the object in the <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> at the index held by pos attribute. Like <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a>[pos]  <br /></td></tr>
+<tr class="memdesc:a39de701f0efb0415bb468d9597f80781"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload dereference * operator. Returns the object in the <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> at the index held by pos attribute. Like <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>[pos]  <br /></td></tr>
 <tr class="separator:a39de701f0efb0415bb468d9597f80781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22177dd9c3e0ae7b2c4afe87c6ccd51d"><td class="memItemLeft" align="right" valign="top"><a id="a22177dd9c3e0ae7b2c4afe87c6ccd51d" name="a22177dd9c3e0ae7b2c4afe87c6ccd51d"></a>
 <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int not_used)</td></tr>
@@ -113,7 +158,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa8cc57ec7d142110e9aa759686509f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload NOT True != operator. It compares the pos attributes of the given ArrayListIterators.  <br /></td></tr>
 <tr class="separator:aa8cc57ec7d142110e9aa759686509f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae773dc6c33198eda691b8185d9b879da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ae773dc6c33198eda691b8185d9b879da">operator+</a> (int other)</td></tr>
-<tr class="memdesc:ae773dc6c33198eda691b8185d9b879da"><td class="mdescLeft">&#160;</td><td class="mdescRight">over load the addition + operator to add to the pos attribute within the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a>  <br /></td></tr>
+<tr class="memdesc:ae773dc6c33198eda691b8185d9b879da"><td class="mdescLeft">&#160;</td><td class="mdescRight">over load the addition + operator to add to the pos attribute within the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a>  <br /></td></tr>
 <tr class="separator:ae773dc6c33198eda691b8185d9b879da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c40a2d8cb542e63af84eaeeea4dcd2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#a1c40a2d8cb542e63af84eaeeea4dcd2b">operator=</a> (const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;other)</td></tr>
 <tr class="memdesc:a1c40a2d8cb542e63af84eaeeea4dcd2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload the = operator to copy or assign a new iterator  <br /></td></tr>
@@ -122,13 +167,125 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~ArrayListIterator</b> ()</td></tr>
 <tr class="memdesc:af6b60c4c13aafc4adfac67a1d7e74f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">no special destructor <br /></td></tr>
 <tr class="separator:af6b60c4c13aafc4adfac67a1d7e74f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a5a0791302942958d971811b834ef6856"><td class="memItemLeft" align="right" valign="top"><a id="a5a0791302942958d971811b834ef6856" name="a5a0791302942958d971811b834ef6856"></a>
+const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mArrayList</b></td></tr>
+<tr class="memdesc:a5a0791302942958d971811b834ef6856"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to the containing <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>. <br /></td></tr>
+<tr class="separator:a5a0791302942958d971811b834ef6856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8f3274af3fb7365ea699ad26af085a"><td class="memItemLeft" align="right" valign="top"><a id="a7b8f3274af3fb7365ea699ad26af085a" name="a7b8f3274af3fb7365ea699ad26af085a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>mPosition</b></td></tr>
+<tr class="memdesc:a7b8f3274af3fb7365ea699ad26af085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current position within the array list. Anything from 0...ArrayListSize-1 is considered "valid", all other values are invalid. <br /></td></tr>
+<tr class="separator:a7b8f3274af3fb7365ea699ad26af085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdb75fe5ae36d356e522015085661f8"><td class="memItemLeft" align="right" valign="top"><a id="a3cdb75fe5ae36d356e522015085661f8" name="a3cdb75fe5ae36d356e522015085661f8"></a>
+ArrayListIteratorType&#160;</td><td class="memItemRight" valign="bottom"><b>mType</b></td></tr>
+<tr class="memdesc:a3cdb75fe5ae36d356e522015085661f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which type of iterator are we? <br /></td></tr>
+<tr class="separator:a3cdb75fe5ae36d356e522015085661f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ae59e6aa915c54d787521e17d8e527814"><td class="memItemLeft" align="right" valign="top"><a id="ae59e6aa915c54d787521e17d8e527814" name="ae59e6aa915c54d787521e17d8e527814"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ArrayList</b></td></tr>
+<tr class="separator:ae59e6aa915c54d787521e17d8e527814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
-class ssuds::ArrayList&lt; T &gt;::ArrayListIterator</div><p>An iterator that keeps track of its position or index within a the parent class <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> and a pointer to the specific <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> it is traversing. </p>
+class ssuds::ArrayList&lt; T &gt;::ArrayListIterator</div><p>The job of <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> is to traverse the data in an <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>. <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> wouldn't necessarily <em>need</em> an iterator since the internal array supports random access, but this is a chance to get used to the iterator pattern, which is much more useful for the user in other classes. We might eventually use inheritance to derive this class from some common iterator class. </p>
+<p>An iterator that keeps track of its position or index within a the parent class <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> and a pointer to the specific <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> it is traversing. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="add51bddc7c966d0b8e5e15ad6a0a9f42" name="add51bddc7c966d0b8e5e15ad6a0a9f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add51bddc7c966d0b8e5e15ad6a0a9f42">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::ArrayListIterator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a> *&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ArrayListIteratorType&#160;</td>
+          <td class="paramname"><em>tp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The main constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>The <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> we are to traverse</td></tr>
+    <tr><td class="paramname">tp</td><td>What type of traversal to do</td></tr>
+    <tr><td class="paramname">start_index</td><td>The index to start on</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6d0942a8043ea8b240aaff6f36fae964" name="a6d0942a8043ea8b240aaff6f36fae964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0942a8043ea8b240aaff6f36fae964">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::ArrayListIterator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy-constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a9e12d4da42dfec4db873c7696195ee8c" name="a9e12d4da42dfec4db873c7696195ee8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e12d4da42dfec4db873c7696195ee8c">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e12d4da42dfec4db873c7696195ee8c">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,10 +320,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>specific constructor for <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a>. list = ArrayListPtr and pos = starting_index </p>
+<p>specific constructor for <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a>. list = ArrayListPtr and pos = starting_index </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arrayList</td><td>pointer to given <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a></td></tr>
+    <tr><td class="paramname">arrayList</td><td>pointer to given <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a></td></tr>
     <tr><td class="paramname">starting_index</td><td>integer of start index</td></tr>
   </table>
   </dd>
@@ -175,7 +332,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a6d0942a8043ea8b240aaff6f36fae964" name="a6d0942a8043ea8b240aaff6f36fae964"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d0942a8043ea8b240aaff6f36fae964">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0942a8043ea8b240aaff6f36fae964">&#9670;&#160;</a></span>ArrayListIterator() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,10 +357,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>A copy constructor. Creates a copy by transferring other's attributes to a new <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a>. </p>
+<p>A copy constructor. Creates a copy by transferring other's attributes to a new <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a> reference</td></tr>
+    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> reference</td></tr>
   </table>
   </dd>
 </dl>
@@ -212,7 +369,7 @@ template&lt;class T &gt; </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa8cc57ec7d142110e9aa759686509f9f" name="aa8cc57ec7d142110e9aa759686509f9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8cc57ec7d142110e9aa759686509f9f">&#9670;&#160;</a></span>operator!=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cc57ec7d142110e9aa759686509f9f">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +397,7 @@ template&lt;class T &gt; </div>
 <p>overload NOT True != operator. It compares the pos attributes of the given ArrayListIterators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a> Reference</td></tr>
+    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> Reference</td></tr>
   </table>
   </dd>
 </dl>
@@ -248,8 +405,45 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a1a8587603e2089159ede221302f3369c" name="a1a8587603e2089159ede221302f3369c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a8587603e2089159ede221302f3369c">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Are we not equal to the other iterator? This is computed by inverting the result of the == operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The iterator we're comparing ourself to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if we're NOT equal</dd></dl>
+
+</div>
+</div>
 <a id="a39de701f0efb0415bb468d9597f80781" name="a39de701f0efb0415bb468d9597f80781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39de701f0efb0415bb468d9597f80781">&#9670;&#160;</a></span>operator*()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a39de701f0efb0415bb468d9597f80781">&#9670;&#160;</a></span>operator*() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,13 +467,80 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>overload dereference * operator. Returns the object in the <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a> at the index held by pos attribute. Like <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a>[pos] </p>
-<dl class="section return"><dt>Returns</dt><dd>object or value in <a class="el" href="classssuds_1_1_array_list.html" title="Makes an array of any given type.">ArrayList</a></dd></dl>
+<p>Returns a reference to the current item in the <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>. It is important that the user only call this method if the iterator is not in an invalid state (defined by being equal to end/rend) </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the current object</dd></dl>
+
+</div>
+</div>
+<a id="a39de701f0efb0415bb468d9597f80781" name="a39de701f0efb0415bb468d9597f80781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39de701f0efb0415bb468d9597f80781">&#9670;&#160;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>overload dereference * operator. Returns the object in the <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a> at the index held by pos attribute. Like <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a>[pos] </p>
+<dl class="section return"><dt>Returns</dt><dd>object or value in <a class="el" href="classssuds_1_1_array_list.html" title="An ArrayList is an array-based data structure.">ArrayList</a></dd></dl>
+
+</div>
+</div>
+<a id="a01ccdf6a0af8a08bbf960e3ace28ba4d" name="a01ccdf6a0af8a08bbf960e3ace28ba4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ccdf6a0af8a08bbf960e3ace28ba4d">&#9670;&#160;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a copy of this iterator that is some amount offset from the current position. The resulting index of that iterator is constratined to be within -1...mSize. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>The amount to offset this iterator (positive or negative)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of this iterator with the given offset applied</dd></dl>
 
 </div>
 </div>
 <a id="ae773dc6c33198eda691b8185d9b879da" name="ae773dc6c33198eda691b8185d9b879da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae773dc6c33198eda691b8185d9b879da">&#9670;&#160;</a></span>operator+()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae773dc6c33198eda691b8185d9b879da">&#9670;&#160;</a></span>operator+() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,14 +565,14 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>over load the addition + operator to add to the pos attribute within the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a> </p>
+<p>over load the addition + operator to add to the pos attribute within the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>integer</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a></dd></dl>
 
 </div>
 </div>
@@ -341,12 +602,86 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>overload ++ operator. Increments the pos attribute. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a></dd></dl>
+
+</div>
+</div>
+<a id="ae5a0b7ee8c18a93031e2352ea20f7e78" name="ae5a0b7ee8c18a93031e2352ea20f7e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a0b7ee8c18a93031e2352ea20f7e78">&#9670;&#160;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator- </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>I don't think std::vector does this, but it is the inverse of the + operator and easy to add. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>The amount to offset this iterator by (inverted)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of this iterator with the given offset</dd></dl>
+
+</div>
+</div>
+<a id="add4129161b3fabe7b5e39ef589eb1bb4" name="add4129161b3fabe7b5e39ef589eb1bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4129161b3fabe7b5e39ef589eb1bb4">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp; <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to copy one <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> value to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> we're copying from</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to this changed <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a></dd></dl>
 
 </div>
 </div>
 <a id="a1c40a2d8cb542e63af84eaeeea4dcd2b" name="a1c40a2d8cb542e63af84eaeeea4dcd2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c40a2d8cb542e63af84eaeeea4dcd2b">&#9670;&#160;</a></span>operator=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c40a2d8cb542e63af84eaeeea4dcd2b">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,16 +709,16 @@ template&lt;class T &gt; </div>
 <p>overload the = operator to copy or assign a new iterator </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>reference to an <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a></td></tr>
+    <tr><td class="paramname">other</td><td>reference to an <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a> with other's attributes</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> with other's attributes</dd></dl>
 
 </div>
 </div>
 <a id="a94cb8cbdefb474da68d0d55aa16d5f6f" name="a94cb8cbdefb474da68d0d55aa16d5f6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94cb8cbdefb474da68d0d55aa16d5f6f">&#9670;&#160;</a></span>operator==()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cb8cbdefb474da68d0d55aa16d5f6f">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +746,7 @@ template&lt;class T &gt; </div>
 <p>overload == operator. It compares the pos attributes of the give ArrayListIterators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="An iterator that keeps track of its position or index within a the parent class ArrayList and a point...">ArrayListIterator</a> reference</td></tr>
+    <tr><td class="paramname">other</td><td><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> reference</td></tr>
   </table>
   </dd>
 </dl>
@@ -419,8 +754,46 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="ad28ae6dd5bfe06af7f912c1ddcb37db3" name="ad28ae6dd5bfe06af7f912c1ddcb37db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28ae6dd5bfe06af7f912c1ddcb37db3">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayListIterator::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Are we equal to the other iterator? I'm currently not considering the <a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html" title="The job of ArrayListIterator is to traverse the data in an ArrayList. ArrayList wouldn&#39;t necessarily ...">ArrayListIterator</a> type... I'm not sure if that's the right call or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The iterator we're comparing ourself to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if we're equal</dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/ssuds/<a class="el" href="array_lists_8h_source.html">arrayLists.h</a></li>
+<li>include/ssuds/<a class="el" href="oldarray_lists_8h_source.html">oldarrayLists.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
