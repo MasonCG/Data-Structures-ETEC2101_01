@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\src\unit_tests\unit_tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\unit_tests\ordered_set_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\examples\Person.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\unit_tests\array_list_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ssuds\OrderedSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,12 +14,14 @@
     <ClCompile Include="..\..\src\examples\Person.cpp" />
     <ClCompile Include="..\..\src\examples\person_database.cpp" />
     <ClCompile Include="..\..\src\unit_tests\LinkedList_tests.cpp" />
+    <ClCompile Include="..\..\src\unit_tests\ordered_set_tests.cpp" />
     <ClCompile Include="..\..\src\unit_tests\unit_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\examples\Person.h" />
     <ClInclude Include="..\..\include\examples\person_database.h" />
     <ClInclude Include="..\..\include\ssuds\arrayLists.h" />
+    <ClInclude Include="..\..\include\ssuds\OrderedSet.h" />
     <ClInclude Include="..\..\include\unit_tests\array_list_tests.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

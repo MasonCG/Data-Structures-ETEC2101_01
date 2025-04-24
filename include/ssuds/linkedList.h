@@ -340,8 +340,6 @@ namespace ssuds
 		/// <param name="ilist">std::initializer_list<T></param>
 		LinkedList(std::initializer_list<T> ilist)
 		{
-		
-
 			for (T val : ilist) {
 				this->append(val);
 			}
