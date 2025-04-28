@@ -15,7 +15,7 @@ namespace ssuds {
 
 	private:
 		unsigned int mCapacity;
-		ssuds::LinkedList<std::pair<K, V>>* mArray;
+		ssuds::LinkedList<std::pair<K, V>*>* mArray;
 
 	public:
 
@@ -23,8 +23,8 @@ namespace ssuds {
 		///		default constructor
 		/// </summary>
 		UnorderedMap() : mCapacity(10) {
-			mArray = new ssuds::LinkedList<std::pair<K, V>>;
-			std::pair<K, V> p;
+			mArray = new ssuds::LinkedList<std::pair<K, V>*>;
+			std::pair<K, V>* p = nullptr;
 			for (int i = 0; i < mCapacity; i++) {
 				mArray->append(p);
 			}
@@ -39,13 +39,13 @@ namespace ssuds {
 			// 2. mod with table size
 			unsigned int index = hash % mCapacity;
 
-			std::pair<V, K> p;
-			p.first = key;
+			std::pair<V, K>* p = new std::pair<V, K>;
+			p->first = key;
 
 			mArray->insert(p, index);
 			// 4. return reference to existing or new_value 
 
-			return mArray->at(index).second;
+			return mArray->at(index)->second;
 		}
 	};
 };

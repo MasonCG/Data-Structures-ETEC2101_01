@@ -12,7 +12,7 @@
 //================================
 
 TEST(UnorderedMaps_tests, Bracket_test) {
-	ssuds::UnorderedMap<std::string, std::string> perp_map;
+	ssuds::UnorderedMap<std::string, float> perp_map;
 
 	perp_map["George"] = 11.5f;
 
