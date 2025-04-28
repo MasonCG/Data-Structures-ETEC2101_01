@@ -95,8 +95,5 @@ int main(int argc, char**)
 
 	std::cout << "floatList[4]: " << floatList[4] << ", floatList.at(4): " << floatList.at(4) << std::endl;
 
-	std::cout << "=============== = operator & copy-constructor ==============\n\n";
-	std::cout << :""
-
 
 }
