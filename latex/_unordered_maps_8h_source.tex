@@ -1,0 +1,51 @@
+\doxysection{Unordered\+Maps.\+h}
+\hypertarget{_unordered_maps_8h_source}{}\label{_unordered_maps_8h_source}\index{include/ssuds/UnorderedMaps.h@{include/ssuds/UnorderedMaps.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacessuds}{ssuds}}\ \{}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ K,\ \textcolor{keyword}{class}\ V>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classssuds_1_1_unordered_map}{UnorderedMap}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K\ and\ V\ are\ usable\ anywhere\ in\ here,\ just\ like\ T\ has\ been}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ K\ =\ key\ type,\ V\ =\ value\ type}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ mCapacity;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds::LinkedList<std::pair<K,\ V>}}>*\ mArray;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classssuds_1_1_unordered_map_ae0bb420e77f142bce81e4ef95197938e}{UnorderedMap}}()\ :\ mCapacity(10)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ mArray\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classssuds_1_1_linked_list}{ssuds::LinkedList<std::pair<K,\ V>}}>;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<K,\ V>\ p;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ mCapacity;\ i++)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mArray-\/>\mbox{\hyperlink{classssuds_1_1_linked_list_a62d3b3641e90b6635dfd78db7526d7fc}{append}}(p);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ V\&\ operator[](\textcolor{keyword}{const}\ K\&\ key)\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0.\ Check\ for\ growth}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1.\ Generate\ new\ Hash\ Value}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::hash<K>\ hasher;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ hash\ =\ hasher(key);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ mod\ with\ table\ size}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\ =\ hash\ \%\ mCapacity;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<V,\ K>\ p;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ p.first\ =\ key;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ mArray-\/>\mbox{\hyperlink{classssuds_1_1_linked_list_ae10ef6136afa82340d1d5f7f8c47126d}{insert}}(p,\ index);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4.\ return\ reference\ to\ existing\ or\ new\_value\ }}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mArray-\/>\mbox{\hyperlink{classssuds_1_1_linked_list_ac360391244bb221751e770dd81f46b64}{at}}(index).second;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['linkedlist_0',['LinkedList',['../classssuds_1_1_linked_list_1_1_linked_list_iterator.html#af71fad9f4990e232af55c73aeddb3823',1,'ssuds::LinkedList::LinkedListIterator::LinkedList'],['../classssuds_1_1_linked_list.html#ad9bf044b5580f2a5507fc0a4c6e9c887',1,'ssuds::LinkedList::LinkedList()'],['../classssuds_1_1_linked_list.html#a08483335637dce981091b412b4b40382',1,'ssuds::LinkedList::LinkedList(LinkedList &amp;other)'],['../classssuds_1_1_linked_list.html#a76ee25b439af9d3b86ea00d21450446a',1,'ssuds::LinkedList::LinkedList(LinkedList &amp;&amp;other)'],['../classssuds_1_1_linked_list.html#a1ad7ea7c39b1507a6f4586c75b8844e2',1,'ssuds::LinkedList::LinkedList(std::initializer_list&lt; T &gt; ilist)'],['../classssuds_1_1_linked_list.html',1,'ssuds::LinkedList&lt; T &gt;']]],
-  ['linkedlistiterator_1',['LinkedListIterator',['../classssuds_1_1_linked_list_1_1_linked_list_iterator.html#aa2c2a987997c35daa868e4165c2fec80',1,'ssuds::LinkedList::LinkedListIterator::LinkedListIterator()'],['../classssuds_1_1_linked_list_1_1_linked_list_iterator.html',1,'ssuds::LinkedList&lt; T &gt;::LinkedListIterator']]],
-  ['linkedlistiteratordirection_2',['LinkedListIteratorDirection',['../namespacessuds.html#a7e2a29a4f8ad1f234836d9c4ef1ef0c0',1,'ssuds']]]
+  ['linkedlist_3c_20std_3a_3apair_3c_20k_2c_20v_20_3e_20_3e_1',['LinkedList&lt; std::pair&lt; K, V &gt; &gt;',['../classssuds_1_1_linked_list.html',1,'ssuds']]],
+  ['linkedlistiterator_2',['LinkedListIterator',['../classssuds_1_1_linked_list_1_1_linked_list_iterator.html#aa2c2a987997c35daa868e4165c2fec80',1,'ssuds::LinkedList::LinkedListIterator::LinkedListIterator()'],['../classssuds_1_1_linked_list_1_1_linked_list_iterator.html',1,'ssuds::LinkedList&lt; T &gt;::LinkedListIterator']]],
+  ['linkedlistiteratordirection_3',['LinkedListIteratorDirection',['../namespacessuds.html#a7e2a29a4f8ad1f234836d9c4ef1ef0c0',1,'ssuds']]]
 ];

@@ -1,0 +1,233 @@
+\doxysection{ssuds\+::Ordered\+Set\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classssuds_1_1_ordered_set}{}\label{classssuds_1_1_ordered_set}\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+
+
+arranges data in a tree from left to right according to the data given.  
+
+
+
+
+{\ttfamily \#include $<$Ordered\+Set.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_ordered_set_abf98d3849b705a94e289ac1ea070d16e}\label{classssuds_1_1_ordered_set_abf98d3849b705a94e289ac1ea070d16e} 
+{\bfseries Ordered\+Set} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_ordered_set_ae4b530c078b3eb1efe96f5f8e679cf88}{Ordered\+Set}} (std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\begin{DoxyCompactList}\small\item\em Initializer-\/list constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_ordered_set_a316b28602caa89ac5c4a6aed51529dd4}\label{classssuds_1_1_ordered_set_a316b28602caa89ac5c4a6aed51529dd4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ordered\+Set} ()
+\begin{DoxyCompactList}\small\item\em destroys the Ordered set before ending the script. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set_a2cc65c0fabdf82d3980a3cf635ccb9ce}{insert}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em inserts a given value into its proper place within the Ordered Set \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set_aee7137b5b2b60a21b3095179984f4da3}{contains}} (const T \&val) const
+\begin{DoxyCompactList}\small\item\em checks to see if a value is already in the Ordered Set or not. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classssuds_1_1_ordered_set_a4a6908e7ef9d10f26d40137a76f59b85}{size}} ()
+\begin{DoxyCompactList}\small\item\em returns the number of values in the Ordered Set. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classssuds_1_1_ordered_set_ad38f67804d6d943e4bf56d1da8e7ab00}{get\+\_\+height}} ()
+\begin{DoxyCompactList}\small\item\em returns the height of the ordered set including the root \end{DoxyCompactList}\item 
+std\+::optional$<$ T $>$ \mbox{\hyperlink{classssuds_1_1_ordered_set_abd42deea3287a3db677e7d943bb2af94}{get\+\_\+parent}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em Finds the parent Node of the given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$ \mbox{\hyperlink{classssuds_1_1_ordered_set_a6667afecd5bce03c91648124556489a8}{traversal}} (Ordered\+Set\+Traversal\+Order order=Ordered\+Set\+Traversal\+Order\+::\+PRE)
+\begin{DoxyCompactList}\small\item\em returns an \doxylink{classssuds_1_1_array_list}{Array\+List} of the Ordered Set in pre-\/ post-\/ and in-\/order. \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_ordered_set_a5e5793d063c806969ef1a0387d90a356}\label{classssuds_1_1_ordered_set_a5e5793d063c806969ef1a0387d90a356} 
+void {\bfseries rebalance} ()
+\begin{DoxyCompactList}\small\item\em rebalances the Ordered Set so that the root is a median number \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_ordered_set_a5e24e59b8905d7add2e784f6334d531c}\label{classssuds_1_1_ordered_set_a5e24e59b8905d7add2e784f6334d531c} 
+std\+::string {\bfseries tree\+\_\+string} ()
+\item 
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set_adef226bb4d52723826ba9ef98f540040}{erase}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em erases given value from the ordered list \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_ordered_set_a2541e0758a82ecd556a1b62a82b16f00}\label{classssuds_1_1_ordered_set_a2541e0758a82ecd556a1b62a82b16f00} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em clears all values from Ordered Set \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_ordered_set_a5e5c5eea452f6836cb6f4dd0fe68475e}\label{classssuds_1_1_ordered_set_a5e5c5eea452f6836cb6f4dd0fe68475e} 
+Node \texorpdfstring{$\ast$}{*} {\bfseries m\+Root}
+\begin{DoxyCompactList}\small\item\em The Root of the Ordered Set. It is the first Node that is seen when traversing the set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_ordered_set_a6db9d28bd448a131448276ee03de1e6d}\label{classssuds_1_1_ordered_set_a6db9d28bd448a131448276ee03de1e6d} 
+class {\bfseries Node}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classssuds_1_1_ordered_set_afbc55a2be3da37b5e56989f0e2df6bf1}{operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{classssuds_1_1_ordered_set}{Ordered\+Set}} \&O)
+\begin{DoxyCompactList}\small\item\em returns a list of the ordered set \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class ssuds\+::\+Ordered\+Set$<$ T $>$}
+arranges data in a tree from left to right according to the data given. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classssuds_1_1_ordered_set_ae4b530c078b3eb1efe96f5f8e679cf88}\label{classssuds_1_1_ordered_set_ae4b530c078b3eb1efe96f5f8e679cf88} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!OrderedSet@{OrderedSet}}
+\index{OrderedSet@{OrderedSet}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{OrderedSet()}{OrderedSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::\+Ordered\+Set (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializer-\/list constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ilist} & std\+::initializer\+\_\+list$<$\+T$>$\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classssuds_1_1_ordered_set_aee7137b5b2b60a21b3095179984f4da3}\label{classssuds_1_1_ordered_set_aee7137b5b2b60a21b3095179984f4da3} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks to see if a value is already in the Ordered Set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & const T\&\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_adef226bb4d52723826ba9ef98f540040}\label{classssuds_1_1_ordered_set_adef226bb4d52723826ba9ef98f540040} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erases given value from the ordered list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & const T\&\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_ad38f67804d6d943e4bf56d1da8e7ab00}\label{classssuds_1_1_ordered_set_ad38f67804d6d943e4bf56d1da8e7ab00} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+unsigned int \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the height of the ordered set including the root 
+
+\begin{DoxyReturn}{Returns}
+unsigned int
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_abd42deea3287a3db677e7d943bb2af94}\label{classssuds_1_1_ordered_set_abd42deea3287a3db677e7d943bb2af94} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!get\_parent@{get\_parent}}
+\index{get\_parent@{get\_parent}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_parent()}{get\_parent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::optional$<$ T $>$ \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::get\+\_\+parent (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the parent Node of the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & const T\&\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$\+T$>$
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_a2cc65c0fabdf82d3980a3cf635ccb9ce}\label{classssuds_1_1_ordered_set_a2cc65c0fabdf82d3980a3cf635ccb9ce} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+inserts a given value into its proper place within the Ordered Set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & const T\&\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_a4a6908e7ef9d10f26d40137a76f59b85}\label{classssuds_1_1_ordered_set_a4a6908e7ef9d10f26d40137a76f59b85} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!size@{size}}
+\index{size@{size}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+unsigned int \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the number of values in the Ordered Set. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_ordered_set_a6667afecd5bce03c91648124556489a8}\label{classssuds_1_1_ordered_set_a6667afecd5bce03c91648124556489a8} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!traversal@{traversal}}
+\index{traversal@{traversal}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{traversal()}{traversal()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$ \mbox{\hyperlink{classssuds_1_1_ordered_set}{ssuds\+::\+Ordered\+Set}}$<$ T $>$\+::traversal (\begin{DoxyParamCaption}\item[{Ordered\+Set\+Traversal\+Order}]{order = {\ttfamily OrderedSetTraversalOrder\+:\+:PRE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns an \doxylink{classssuds_1_1_array_list}{Array\+List} of the Ordered Set in pre-\/ post-\/ and in-\/order. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classssuds_1_1_ordered_set_afbc55a2be3da37b5e56989f0e2df6bf1}\label{classssuds_1_1_ordered_set_afbc55a2be3da37b5e56989f0e2df6bf1} 
+\index{ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ssuds::OrderedSet$<$ T $>$@{ssuds::OrderedSet$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{classssuds_1_1_ordered_set}{Ordered\+Set}}$<$ T $>$ \&}]{O }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+returns a list of the ordered set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em l\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ssuds/Ordered\+Set.\+h\end{DoxyCompactItemize}
